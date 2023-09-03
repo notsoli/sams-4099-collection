@@ -1,0 +1,57 @@
+@font-face {
+    font-family: 'Bluu Next';
+    src: url('BluuNext-Bold.woff2') format('woff2'),
+        url('BluuNext-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Isenheim';
+    src: url('Isenheim-Regulier.woff2') format('woff2'),
+        url('Isenheim-Regulier.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    margin-left: 20px;
+}
+
+h1, h2 {
+    font-family: 'Bluu Next';
+}
+
+p {
+    font-family: 'Isenheim';
+    max-width: 500px;
+    margin: 20px 0;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+header {
+    margin-bottom: 50px;
+}
+
+header h1 {
+    color: white;
+    background-color: black;
+    width: fit-content;
+    padding: 10px;
+}
+
+article {
+    margin-bottom: 50px;
+}
