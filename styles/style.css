@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Bluu Next';
-    src: url('fonts/BluuNext-Bold.woff2') format('woff2'),
-        url('fonts/BluuNext-Bold.woff') format('woff');
+    src: url('../fonts/BluuNext-Bold.woff2') format('woff2'),
+        url('../fonts/BluuNext-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -9,8 +9,8 @@
 
 @font-face {
     font-family: 'Isenheim';
-    src: url('fonts/Isenheim-Regulier.woff2') format('woff2'),
-        url('fonts/Isenheim-Regulier.woff') format('woff');
+    src: url('../fonts/Isenheim-Regulier.woff2') format('woff2'),
+        url('../fonts/Isenheim-Regulier.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
