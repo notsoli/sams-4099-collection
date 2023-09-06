@@ -55,3 +55,12 @@ header h1 {
 article {
     margin-bottom: 50px;
 }
+
+li {
+    list-style: none;
+}
+
+a {
+    color: red;
+    font-family: 'Bluu Next';
+}
