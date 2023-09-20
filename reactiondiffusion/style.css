@@ -1,0 +1,22 @@
+html {
+    margin: 0;
+  }
+  
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+}
+  
+canvas {
+    width: 100%;
+    height: 100%;
+}
+
+#instructions {
+    position: absolute;
+    left: calc(50% - 120px);
+    top: calc(50% - 20px);
+    margin: auto;
+    font-size: 40px;
+}
