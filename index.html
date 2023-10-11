@@ -81,6 +81,51 @@
             <p>This one took about 3 hours!</p>
             <li><a href="vants/">Project (code can be read via inspect -> sources)</a></li>
         </article>
+        <article>
+            <h2>[LIVE BIKE REACTION]</h2>
+            <p>
+                My final project! I've always been inspired by post-processing effects in games, especially those that not only increase
+                immersion, but encode information about the game state and communiucate it seamlessly to the player. It's a much more
+                fun way to create an immersive user interface when the art style and mechanics allow it. In order to make a boring bike
+                through campus or Elm Park more interesting, I decided to create a set of post-processing effects linked to sensor data
+                and apply them to live video!
+            </p>
+            <p>
+                In order to gather sensor data, I used a Circuit Playground Express, which is a tiny board with many embedded sensors
+                including an accelerometer, microphone, temperature sensor, and photosensor. Additionally, a webcam is used to generate
+                live video. Serial communication through USB is then used to transmit information to a webpage using the JavaScript
+                serial API, aggregating the information into an internal state. Finally, Seagulls is used to pull from this state and
+                pass it along into a fragment shader, which applies post-processing effects to the video.
+            </p>
+            <p>
+                The first effect I included was a "wild-west" heat distortion effect I created for Interactive Electronic Arts, which I
+                thought would be great to include in this project. That effect is simply a combination of a couple simple color and video
+                manipulation techniques: Perlin noise to replicate a fiery haze, horizontal "scan lines" resembling digital distortion,
+                sinusoidal video warping to resemble heat waves, and a bump in contrast to emphasize the rest of the visual effects.
+            </p>
+            <p>
+                The "warp speed" effect was easy to implement graphically--it's just simple video feedback--but differentiating between
+                consistent acceleration and sharp bumps using a pretty poor accelerometer was tricky. I ended up adding to a "velocity"
+                value for each frame the acceleration was over a specific threshold, and having it decay naturally.
+            </p>
+            <p>
+                Volume was similar, being much easier to implement on the shader side. I had to take a short sample of audio and use that
+                as a baseline to compare the rest of my audio records to, using a log scale to convert into decibels and using trial and
+                error to choose a threshold. In the shader, it was just a gradient on the far edges of the screen, using a soft blue color.
+            </p>
+            <p>
+                Pixel sorting was the trickiest effect to implement. I originally tried to do it using a compute shader, but after a ton of
+                experimentation within Seagulls, I realized that it did a ton of black magic behind the scenes which prevented feedback,
+                video input, and compute shaders from working simultaneously. I ended up finding a
+                <a href="https://ciphrd.com/2020/04/08/pixel-sorting-on-shader-using-well-crafted-sorting-filters-glsl/">really cool article</a>
+                detailing an extremely flexible and simple method that worked within a fragment shader. Getting it functioning was a ton of fun!
+                The effect works by detecting an acceleration value above a certain threshold and setting a 50-frame timer for when the effect
+                would run. Bumping the board again within that time resets the timer.
+            </p>
+            <p>Absolutely no clue how long this one took. Probably 15-20 hours?</p>
+            <img src="images/live_bike_reaction.jpeg" alt="">
+            <li><a href="https://github.com/notsoli/live-bike-reaction">Code</a> • <a href="https://youtu.be/PaGvUnXT_vg">Effect Demo</a> • <a href="https://youtu.be/yZorvorynu4">Pixel Sorting Demo</a> • <a href="/">Live Biking Demo</a></li>
+        </article>
     </main>
     <footer>
 
